@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'HZReFreshControl_Example' do
+  pod 'HZReFreshControl', :path => '../'
+
+  target 'HZReFreshControl_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
