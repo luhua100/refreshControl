@@ -32,12 +32,10 @@ class HZBottomRefreshControl: UIView {
             
             if currentStatus == .Normal {
                 statusLabel.text = "上拉加载更多数据.."
-                indicatorView.stopAnimating()
             }else if currentStatus == .Pulling {
                 statusLabel.text = "松手加载更多数据.."
             }else if currentStatus == .Refreshing {
                 statusLabel.text = "正在加载更多数据.."
-                indicatorView.startAnimating()
                 //处理视图样式
                 
                 let top = (superScollView?.contentInset.top ?? 0)
@@ -83,12 +81,6 @@ class HZBottomRefreshControl: UIView {
         return statusLabel
     }()
     
-    lazy var indicatorView: UIActivityIndicatorView = {  [weak self] in
-        let  indicatorView = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
-        indicatorView.stopAnimating()
-        return indicatorView
-    }()
-    
     
     var bottomRefreshEvent : (()->())?
     func bottomEndRefresh() {
@@ -113,9 +105,8 @@ class HZBottomRefreshControl: UIView {
         
         statusLabel.frame  = CGRect.init(x: 0, y: 0, width: 200, height: 22)
         statusLabel.center = self.center
-        indicatorView.frame = CGRect.init(x: statusLabel.frame.origin.x - 30, y: (self.frame.size.height / 2) - 10, width: 20, height: 20)
         addSubview(statusLabel)
-        addSubview(indicatorView)
+       
         
     }
     
@@ -150,7 +141,6 @@ class HZBottomRefreshControl: UIView {
             }else{
                 currentStatus = .Normal
                 statusLabel.text = ""
-                indicatorView.stopAnimating()
             }
         }else if keyPath == "contentOffset"{
             /*
