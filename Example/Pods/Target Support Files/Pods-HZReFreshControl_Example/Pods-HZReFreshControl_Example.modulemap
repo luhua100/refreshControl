@@ -1,0 +1,6 @@
+framework module Pods_HZReFreshControl_Example {
+  umbrella header "Pods-HZReFreshControl_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

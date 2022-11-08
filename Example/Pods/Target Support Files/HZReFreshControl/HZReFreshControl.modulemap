@@ -1,0 +1,6 @@
+framework module HZReFreshControl {
+  umbrella header "HZReFreshControl-umbrella.h"
+
+  export *
+  module * { export * }
+}

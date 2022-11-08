@@ -1,0 +1,16 @@
+PODS:
+  - HZReFreshControl (0.1.0)
+
+DEPENDENCIES:
+  - HZReFreshControl (from `../`)
+
+EXTERNAL SOURCES:
+  HZReFreshControl:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HZReFreshControl: 9744cede95017dc6b7d293ec1d4df6d3615d1227
+
+PODFILE CHECKSUM: 1b0a7956f6d66749eac570c7093a378aece2e32a
+
+COCOAPODS: 1.11.2
