@@ -82,8 +82,8 @@ class HZBottomRefreshControl: UIView {
     }()
     
     
-    var bottomRefreshEvent : (()->())?
-    func bottomEndRefresh() {
+   public  var bottomRefreshEvent : (()->())?
+   public func bottomEndRefresh() {
         if(currentStatus == .Refreshing){
             currentStatus = .Normal
         }
@@ -172,7 +172,7 @@ class HZBottomRefreshControl: UIView {
     
 }
 
-extension UIScrollView {
+public extension UIScrollView {
     
     struct RuntimeKeyBottom {
             
@@ -181,7 +181,7 @@ extension UIScrollView {
         }
     
     
-    var bottomRefreshControl : HZBottomRefreshControl? {
+ public  var bottomRefreshControl : HZBottomRefreshControl? {
         set{
             
             objc_setAssociatedObject(self, UIScrollView.RuntimeKeyBottom.kProgressHud!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
