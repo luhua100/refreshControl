@@ -19,7 +19,7 @@ enum HeaderRefreshControlStatus : Int {
 class HZHeaderRefreshControl: UIView {
  
     //MARK: - 头部刷新的回调
-    var headerFreshControlEvent : (()->())?
+   public var headerFreshControlEvent : (()->())?
     
     var currentStatus  : HeaderRefreshControlStatus = .Normal{
         didSet{
@@ -108,7 +108,7 @@ class HZHeaderRefreshControl: UIView {
     
     
     //MARK: - 结束头部刷新的回调
-    func headerEndRefresh() {
+   public func headerEndRefresh() {
         if currentStatus == .Refreshing {
             currentStatus = .Normal
             UIView.animate(withDuration: 0.25) {
@@ -125,7 +125,7 @@ class HZHeaderRefreshControl: UIView {
     }
 }
 
-extension UIScrollView {
+public extension UIScrollView {
     
     struct RuntimeKey {
             
@@ -134,7 +134,7 @@ extension UIScrollView {
         }
     
     
-    var headerRefreshControl : HZHeaderRefreshControl? {
+  public  var headerRefreshControl : HZHeaderRefreshControl? {
         set{
             
             objc_setAssociatedObject(self, UIScrollView.RuntimeKey.kProgressHud!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
